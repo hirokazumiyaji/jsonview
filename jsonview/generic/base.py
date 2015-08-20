@@ -19,7 +19,7 @@ class JSONResponseMixin(object):
         )
 
 
-class JSONView(JsonResponseMixin, ContextMixin, View):
+class JSONView(JSONResponseMixin, ContextMixin, View):
     def get(self, request, *args, **kwargs):
         context = self.get_context_data(**kwargs)
         return self.render_to_response(context)
